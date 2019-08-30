@@ -148,7 +148,7 @@ Java_com_wonderkiln_camerakit_JpegTransformer_jniCommit
         cropRegion.h = jpegTransformer->cropHeight;
 
         transform->r = cropRegion;
-        transform->options = TJXOPT_CROP;
+        transform->options = TJXOPT_CROP | TJXOPT_TRIM;
     }
 
     tjTransform(tjHandle, jpeg, jpegSize, 1, &jpeg, &jpegSize, transform, 0);
